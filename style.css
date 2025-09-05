@@ -1,0 +1,15 @@
+*{
+    background-color: lightblue;
+}
+
+header{
+    padding: 5px;
+    text-align: center;
+}
+
+header button{
+    background-color: coral;
+    padding: 7px;
+    border-radius: 50%;
+    border: 1px black solid;
+}
