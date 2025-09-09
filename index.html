@@ -17,28 +17,6 @@
         </div>
     </header>
 
-    <div>
-        <div id="jokeById">
-            <label>Írja be a vicc sorszámát: </label>
-            <input type="number" id="jokeId">
-            <button type="button" onclick="GetJokeById()">Lekérés</button>
-            <p id="jokeSetupId"></p>
-        </div>
-
-        <div id="jokeByType">
-            <label>Milyen típusú viccet szeretne: </label>
-            <select id="typeOfJoke">
-                <option value="general">General</option>
-                <option value="programming">Programming</option>
-            </select>
-            <button type="button" onclick="GetJokeByType()">Generálás</button>
-            <p id="jokeSetupType"></p>
-        </div>
-
-        <div id="randomJoke">
-            <p id="jokeSetup"></p>
-            <p id="jokePunchline"></p>
-        </div>
-    </div>
+    <div id="jokeCard"></div>
 </body>
 </html>

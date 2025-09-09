@@ -1,15 +1,21 @@
-function GetRandomJoke(){
-    //next
-    document.getElementById("jokeById").style.visibility = "hidden";
-    document.getElementById("jokeByType").style.visibility = "hidden";
-    document.getElementById("randomJoke").style.visibility = "visible";
+async function GetRandomJoke(){
+    let jokeCard = document.getElementById("jokeCard");
 
-    document.getElementById("jokeSetup").innerHTML = "";
-    document.getElementById("jokePunchline").innerHTML = "";
-    fetch('https://official-joke-api.appspot.com/jokes/random')
-    .then(response => response.json())
-    .then(data => document.getElementById("jokeSetup").innerHTML = data.setup)
-    .then(data => document.getElementById("jokePunchline").innerHTML = data.punchline);
+    jokeCard.style.visibility = 'visible';
+    jokeCard.innerHTML = `<h2>Random Joke</h2>`;
+    //next
+
+    try {
+        const response = await fetch('https://official-joke-api.appspot.com/jokes/random');
+        const data = await response.json();
+
+        jokeCard.innerHTML += `<p>${data.setup}</p>`;
+        jokeCard.innerHTML += `<p>${data.punchline}</p>`;
+    } catch (error) {
+        console.error("Hiba történt:", error);
+    }
+
+    jokeCard.innerHTML += `<button type="button" onclick="GetRandomJoke()">Another One!</button>`;
 }
 
 function ShowIdInput(){
@@ -28,15 +34,23 @@ function ShowOptions(){
 function GetJokeById(){
     let id = document.getElementById("jokeId").value;
 
-    fetch(`https://official-joke-api.appspot.com/jokes/${id}`)
+    fetch('https://official-joke-api.appspot.com/jokes/random')
     .then(response => response.json())
-    .then(data => document.getElementById("jokeSetupId").innerHTML = data.setup);
+    .then(data => {
+        document.getElementById("jokeSetup").innerHTML = data.setup;
+        document.getElementById("jokePunchline").innerHTML = data.punchline;
+    })
+    .catch(error => console.error("Hiba történt:", error));
 }
 
 function GetJokeByType(){
     let type = document.getElementById("typeOfJoke").value;
     console.log(type);
-    fetch(`https://official-joke-api.appspot.com/jokes/${type}/random`)
+    fetch('https://official-joke-api.appspot.com/jokes/random')
     .then(response => response.json())
-    .then(data => document.getElementById("jokeSetupType").innerHTML = data.setup);
+    .then(data => {
+        document.getElementById("jokeSetup").innerHTML = data.setup;
+        document.getElementById("jokePunchline").innerHTML = data.punchline;
+    })
+    .catch(error => console.error("Hiba történt:", error));
 }

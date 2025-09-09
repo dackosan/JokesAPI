@@ -1,4 +1,4 @@
-*{
+body{
     background-color: lightblue;
 }
 
@@ -8,16 +8,30 @@ header{
 }
 
 header button{
-    background-color: coral;
+    background-color: rgb(191, 219, 220);
+    font-weight: bold;
     padding: 7px;
-    border-radius: 50%;
+    border-radius: 10px;
     border: 1px black solid;
+    margin: 5px;
 }
 
-#jokeById{
+#jokeCard{
     visibility: hidden;
+    background-color: cadetblue;
+    width: 35%;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 30px;
+    border: 1px solid gray;
+    box-shadow: 3px 3px 3px black;
 }
 
-#jokeByType{
-    visibility: hidden;
+#jokeCard button{
+    background-color: rgb(191, 219, 220);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
 }
