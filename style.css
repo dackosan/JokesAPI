@@ -18,7 +18,7 @@ header button{
 
 #jokeCard{
     visibility: hidden;
-    background-color: cadetblue;
+    background-color: rgb(131, 180, 182);
     width: 35%;
     margin: auto;
     text-align: center;
