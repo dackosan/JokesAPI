@@ -31,6 +31,12 @@ function ShowJokeByIdCard(){
 async function GetJokeById(){
     let id = document.getElementById("jokeId").value;
 
+    jokeCard.innerHTML = `<h2>Poén Sorszám Alapján</h2>`;
+    jokeCard.innerHTML += `
+        <label>Írja be a sorszámot: </label>
+        <input type="number" id="jokeId" min="1" max="451">
+        <button type="button" onclick="GetJokeById()">Generál</button>`
+
     try{
         const response = await fetch(`https://official-joke-api.appspot.com/jokes/${id}`);
         const data = await response.json();
@@ -60,6 +66,17 @@ function ShowJokeByType(){
 
 async function GetJokeByType(){
     let type = document.getElementById("jokeType").value;
+
+    jokeCard.innerHTML = `<h2>Poén Típus Alapján</h2>`;
+    jokeCard.innerHTML += `
+        <label>Válassza ki a poén típusát: </label>
+        <select id="jokeType">
+            <option value="general">General</option>
+            <option value="programming">Programming</option>
+            <option value="knock-knock">Knock-Knock</option>
+            <option value="dad">Dad</option>
+        </select>
+        <button type="button" onclick="GetJokeByType()">Generál</button>`
 
     try{
         const response = await fetch(`https://official-joke-api.appspot.com/jokes/${type}/random`);

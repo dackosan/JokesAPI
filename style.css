@@ -3,27 +3,30 @@ body{
 }
 
 header{
-    padding: 5px;
+    padding: 15px;
     text-align: center;
+    background-color: rgb(131, 180, 182);
 }
 
 header button{
     background-color: rgb(191, 219, 220);
     font-weight: bold;
-    padding: 7px;
+    padding: 10px;
     border-radius: 10px;
     border: 1px black solid;
     margin: 5px;
+    font-size: 25px;
 }
 
 #jokeCard{
     visibility: hidden;
     background-color: rgb(131, 180, 182);
     width: 35%;
+    height: 180px;
     margin: auto;
     text-align: center;
     padding: 5px;
-    margin-top: 5px;
+    margin-top: 50px;
     border-radius: 30px;
     border: 1px solid gray;
     box-shadow: 3px 3px 3px black;
